@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Ch08-範例與提示詞展示</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			background-color: #f4f4f4;
+			margin: 20px;
+		}
+		h1 {
+			color: #333;
+			text-align: center;
+		}
+		p {
+			margin: 10px 0;
+			color: #555;
+			padding: 10px;
+			background: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.prompt-block, .table-block {
+			background: #eee;
+			padding: 15px;
+			border-radius: 5px;
+			border-left: 5px solid #0073e6;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			position: relative;
+			margin: 20px 0;
+			display: flex;
+			align-items: flex-start; /* 保持內容與按鈕的垂直對齊 */
+		}
+		.chapter-title {
+			font-size: 1.5em;
+			font-weight: bold;
+			color: #003366;
+			margin-top: 20px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			font-size: 1em;
+			background-color: #0073e6;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #005bb5;
+		}
+		.copy-button {
+			margin-right: 15px; /* 與文字間距 */
+			padding: 5px 10px;
+			font-size: 0.9em;
+			background-color: #28a745;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.copy-button:hover {
+			background-color: #218838;
+		}
+		.content-text {
+			flex: 1;
+			margin: 0;
+		}
+		/* 分隔線的樣式 */
+		.divider {
+			border-top: 1px solid #ccc;
+			margin: 20px 0;
+		}			
+    </style>
+    <script>
+		function copyToClipboard(button) {
+			var content = button.parentElement.querySelector('.content-text').innerText;
+			navigator.clipboard.writeText(content).then(function() {
+				// 成功後不執行任何操作
+			}, function() {
+				// 失敗後不執行任何操作
+			});
+		}
+    </script>
+</head>
+<body>
+    <button onclick="history.back()">回上一頁</button>
+    <h1>Ch08-範例與提示詞展示</h1>
+    <div class="content">
+        <div class="chapter-title">8.2</div>
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">給我一個豐富的心智圖，有關於世界文學</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">建立流程圖來解釋水循環</p>
+			</div>
+		Step03：如何在其他平台上使用 Mermaid 的內容
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://mermaid.js.org/</p>
+			</div>
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">繪製一張心智圖，概述三國志的《赤壁之戰》中的關鍵主題</p>
+			</div>	
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">產生流程圖以顯示客戶服務流程中的步驟</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">創建心智圖，為新產品集思廣益行銷策略</p>
+			</div>
+		Step08：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">創建一個流程圖來說明煮咖啡的過程</p>
+			</div>	
+		Step09：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">以流程圖說明詳細的軟體開發生命週期</p>
+			</div>
+		Step10：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">建立一個序列圖來示範 Web 應用程式中的使用者驗證過程</p>
+			</div>
+		Step11：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">以下是一個大企業的組織結構的文本描述，請產生組織結構圖。</p>
+			</div>				
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+		
+        <div class="chapter-title">8.3</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">強調解決方案的長期目標，如減少碳足跡、保護野生動植物和生態系統。圖形內容描述：創建一個令人驚嘆的創新思維圖，以鼓勵思考環境問題的解決方法。使用高度視覺化的圖示、符號和動畫效果，來展示各種解決方法的吸引力和可行性。將問題和解決方法之間的關聯以精細的圖示、箭頭和線條清晰呈現，以強調每個解決方法的實際影響。使用亮麗的色彩和動畫效果，來展示碳足跡的減少和自然環境的保護。考慮使用交互性元素，如點擊圖示以顯示更多詳細信息，以激發使用者的創新思維並加深對解決環境問題的理解。這將確保使用者對於環境問題的解決方案感到驚嘆，並對平台的強大功能印象深刻。圖表的內容用中文顯示。</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">這個時間軸圖涵蓋了多個專案，每個專案包含多個關鍵任務，如需求分析、設計、開發、測試和上線等。任務間的相互依賴性不同任務之間存在相互依賴性，某些任務必須在其他任務完成後才能開始。這種相互依賴性在時間軸圖中應該清晰可見。多個里程碑，包括重要日期和交付物每個專案都包含多個重要的里程碑，這些里程碑標誌著特定事件或交付物的完成。重要日期和交付物應該明確標註在時間軸上。圖形內容描述：創建一個令人驚嘆的複雜時間軸圖，以展示多個專案的時間軸和任務的複雜性。使用引人入勝的視覺效果，如立體效果、色彩變化、漸變色等，以使每個專案的時間軸圖看起來生動且引人注目。任務和相互依賴性應以清晰可識別的方式表示，例如，使用不同的形狀和線條標示不同的任務，並使用箭頭來指示相互依賴性。里程碑應以特殊的圖示或標籤突出顯示，並在時間軸上清晰標註重要日期和交付物。同時，考慮使用動畫效果來強調時間軸上的關鍵事件，以增加互動性。最後，確保時間軸圖能夠清楚地傳達每個專案的進展情況和複雜性，讓使用者對專案管理的功能強大印象深刻。</p>
+			</div>	
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">展示一個系統從伺服器、數據流到安全通信的完整技術架構，強調其現代感與未來感。</p>
+			</div>
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">創建一個更專業、更有趣的強化環境生態圖，使用更豐富的圖示來展示自然生態系統中的食物鏈、共生關係以及生態保護措施，同時強調其複雜性與重要性。</p>
+			</div>	
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">透過資料庫的實體關係圖展示學生管理系統的多個實體及其間的複雜資料關聯</p>
+			</div>			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">8.4</div>
+		範例一：數學問題解答
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">解釋並解決這個微分方程式: dy/dx = x^2</p>
+			</div>
+		範例二：程式碼輔助編寫
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">如何在Python中實現一個簡單的排序算法？</p>
+			</div>
+		範例三：自然語言處理
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">分析這段文本的情感[在最近的團隊會議中，李經理表達了對新產品發佈的焦慮和擔憂。儘管團隊在產品開發過程中付出了大量的努力，但市場反應尚不明朗，這讓李經理感到壓力很大。他擔心產品未來的銷售表現，尤其是在競爭對手強勢出擊的情況下。會議最後，李經理感謝了團隊的辛勤付出，但也明確表示，未來幾週將會是關鍵期，需要全力以赴。]，並提供摘要。</p>
+			</div>	
+		範例四：科學研究輔助
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">解釋量子糾纏的原理並舉例說明。</p>
+			</div>	
+		範例五：學術寫作輔助
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">提供一個關於氣候變化影響的研究論文大綱。</p>
+			</div>
+		範例六：健康與醫學諮詢
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">解釋2型糖尿病的主要治療方法。</p>
+			</div>
+		範例七：歷史事件探索
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">概述第二次世界大戰的主要轉折點。</p>
+			</div>	
+		範例八：創意寫作與靈感發想
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">創建一個關於時間旅行的短故事大綱。</p>
+			</div>	
+		範例九：語言學習輔助
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">提供日常對話中的法語基礎短語和常用表達，並對照中文。</p>
+			</div>			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">8.5</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請幫我找關於「利用類神經網路，進行股票交易」的十篇英文論文。</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">我想寫一篇有關企業面對應用生成式AI的機會與困境的論文，能給我一個大綱嗎？</p>
+			</div>
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請幫我撰寫第一項目引言裡面的背景介紹</p>
+			</div>	
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">這個部份需要搭配怎樣的圖表，請幫我完成。</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">我要寫一篇有關大學生使用生成式AI的論文，請你給我適合的研究主題，並提供5篇參考的英文論文。</p>
+			</div>
+		Step08：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請協助我一起將這個論文完成「生成式AI在大學生學術寫作中的應用與挑戰」</p>
+			</div>
+		Step09：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請幫我撰寫第一項目引言裡面的研究背景與意義的內容</p>
+			</div>			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+		
+        <div class="chapter-title">8.6</div>
+		Step01：內政部不動產交易實價資訊下載連結
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://plvr.land.moi.gov.tw/DownloadOpenData</p>
+			</div>		
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">名稱：台北房地產諮詢專家
+說明：提供使用者進行評估給出合理的房價與進行仔細的解釋。
+指令：我想要建立讓使用者能查詢特定地點的房價，模型要能夠依照使用者給的各種條件，進行評估給出合理的房價與進行仔細的解釋，也可以依照使用者提供的資訊，幫忙查找適合的居住地點，這個GPT叫做台北房地產諮詢專家，所有的房價資訊從知識庫中查詢。模型要加入房地產專家的知識，具備利用機器學習與統計分析的理論與實務經驗，模型的回覆都要有條有理，以數據為導向，上傳的知識文件，要先經過細部拆分，才可以讓模型做最好的資料分析。
+</p>
+			</div>
+		Step10：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請在首頁產生四個提示詞，用中文表示。</p>
+			</div>
+		Step11：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請新增</p>
+			</div>	
+		Step15：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">各地區平均每坪房價熱力圖</p>
+			</div>
+		Step16：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">從我上傳的知識庫中分析，台北市各區的資料，房地產市場趨勢如何？</p>
+			</div>
+		Step17：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">哪些地區的房價增長最快？</p>
+			</div>
+		Step18：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">以目前來看，未來幾年各地區的房地產市場可能的發展趨勢是什麼？</p>
+			</div>			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>		
+		
+        <div class="chapter-title">8.7</div>
+		Step01：勞動基準法的下載連結
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=N0030001</p>
+			</div>		
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">名稱：勞基法專家
+說明：提供使用者勞法基法規查詢。
+指令：我想要建立讓使用者能查詢勞動基準法的所有資訊，這個GPT叫做勞基法專家，所有的法規資料都要從這個知識庫中查詢，如果查不到，就要回覆使用者，查不到相關資訊。</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請在首頁產生四個提示詞，用中文表示。</p>
+			</div>
+		Step08：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請新增</p>
+			</div>	
+		Step12：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">什麼是加班工資的計算方式？</p>
+			</div>
+		Step13：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將勞動基準法中有關罰則的部份以表格方式呈現。</p>
+			</div>
+		Step14：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">用一般人容易理解的話來說明勞基法中有關退休金的計算，並且給我範例。</p>
+			</div>
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>				
+
+
+    </div>
+</body>
+</html>

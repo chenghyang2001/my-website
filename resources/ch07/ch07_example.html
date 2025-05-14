@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Ch07-範例與提示詞展示</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			background-color: #f4f4f4;
+			margin: 20px;
+		}
+		h1 {
+			color: #333;
+			text-align: center;
+		}
+		p {
+			margin: 10px 0;
+			color: #555;
+			padding: 10px;
+			background: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.prompt-block, .table-block {
+			background: #eee;
+			padding: 15px;
+			border-radius: 5px;
+			border-left: 5px solid #0073e6;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			position: relative;
+			margin: 20px 0;
+			display: flex;
+			align-items: flex-start; /* 保持內容與按鈕的垂直對齊 */
+		}
+		.chapter-title {
+			font-size: 1.5em;
+			font-weight: bold;
+			color: #003366;
+			margin-top: 20px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			font-size: 1em;
+			background-color: #0073e6;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #005bb5;
+		}
+		.copy-button {
+			margin-right: 15px; /* 與文字間距 */
+			padding: 5px 10px;
+			font-size: 0.9em;
+			background-color: #28a745;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.copy-button:hover {
+			background-color: #218838;
+		}
+		.content-text {
+			flex: 1;
+			margin: 0;
+		}
+		/* 分隔線的樣式 */
+		.divider {
+			border-top: 1px solid #ccc;
+			margin: 20px 0;
+		}			
+    </style>
+    <script>
+		function copyToClipboard(button) {
+			var content = button.parentElement.querySelector('.content-text').innerText;
+			navigator.clipboard.writeText(content).then(function() {
+				// 成功後不執行任何操作
+			}, function() {
+				// 失敗後不執行任何操作
+			});
+		}
+    </script>
+</head>
+<body>
+    <button onclick="history.back()">回上一頁</button>
+    <h1>Ch07-範例與提示詞展示</h1>
+    <div class="content">
+        <div class="chapter-title">7.1</div>
+		Step01：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請幫我導入鋼材價格的歷史數據</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請幫我清理數據，處理缺失值並篩選相關特徵</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">模型訓練使用線性迴歸來訓練模型</p>
+			</div>
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請用模型預測未來三個月的鋼材價格</p>
+			</div>			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+		
+        <div class="chapter-title">7.2</div>
+		Step01：歷史數據下載連結
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://fubon-ebrokerdj.fbs.com.tw/z/ze/zeq/zeqa_D0200110.djhtm</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將上面資料轉成csv讓我下載</p>
+			</div>
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">進行分析鋼筋價格歷史趨勢</p>
+			</div>	
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">利用統計季節性分析，看看鋼筋是否有季節性，同時告訴我週期是多少。</p>
+			</div>
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">鋼筋價格的趨勢有何變化？</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">利用arima進行鋼筋價格的未來2年，每一季的價格預測。</p>
+			</div>	
+		Step08：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">使用AI機器學習XGBoost模型進行預測未來2年，每一季的價格預測。調整模型的參數，降低迭代次數，並稍微提高學習率。</p>
+			</div>
+		Step09：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">針對上面的數據與結果，如果你是採購的主管，想要替公司避開風險，降低採購成本，你會怎麼提問？</p>
+			</div>
+			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">7.3</div>
+		Step01：波士頓房價數據下載連結
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://www.kaggle.com/competitions/machine-learning-on-thursday/data</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">我想要進行波士頓房價預測主題式分析， train_dataset.csv是訓練資料集， 其中PRICE欄位是房價預測結果， test_dataset.csv是測試資料集， SampleSubmission.csv是存放預測結果。請先利用train_dataset.csv內資料進行數據探索。</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">利用train_dataset.csv內資料進行特徵工程</p>
+			</div>	
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將特徵工程處理後的資料集，使用機器學習模型xgboost建立AI預測模型。調整模型的參數，在測試中使用較小的樣本集來加快模型的訓練過程，降低疊代次數，並稍微提高學習率。</p>
+			</div>
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">輸入test_dataset.csv資料，進行房價預測，將測試結果依照SampleSubmission.csv格式存放，並將更新後的SampleSubmission.csv含房價預測結果提供下載。</p>
+			</div>
+			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">7.4</div>
+		範例一：<BR>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">我想要建立一個 To-Do List 程式，讓使用者能夠新增、刪除和更新任務，並設置每個任務的截止時間。</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請將程式修改為可以在本地端執行並讓使用者擁有介面操作</p>
+			</div>
+		範例二：<BR>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">用python gradio開發一個簡單的記帳系統</p>
+			</div>
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>		
+
+
+    </div>
+</body>
+</html>

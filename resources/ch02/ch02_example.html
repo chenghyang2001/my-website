@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Ch02-範例與提示詞展示</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			background-color: #f4f4f4;
+			margin: 20px;
+		}
+		h1 {
+			color: #333;
+			text-align: center;
+		}
+		p {
+			margin: 10px 0;
+			color: #555;
+			padding: 10px;
+			background: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.prompt-block, .table-block {
+			background: #eee;
+			padding: 15px;
+			border-radius: 5px;
+			border-left: 5px solid #0073e6;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			position: relative;
+			margin: 20px 0;
+			display: flex;
+			align-items: flex-start; /* 保持內容與按鈕的垂直對齊 */
+		}
+		.chapter-title {
+			font-size: 1.5em;
+			font-weight: bold;
+			color: #003366;
+			margin-top: 20px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			font-size: 1em;
+			background-color: #0073e6;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #005bb5;
+		}
+		.copy-button {
+			margin-right: 15px; /* 與文字間距 */
+			padding: 5px 10px;
+			font-size: 0.9em;
+			background-color: #28a745;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.copy-button:hover {
+			background-color: #218838;
+		}
+		.content-text {
+			flex: 1;
+			margin: 0;
+		}
+		/* 分隔線的樣式 */
+		.divider {
+			border-top: 1px solid #ccc;
+			margin: 20px 0;
+		}			
+    </style>
+    <script>
+		function copyToClipboard(button) {
+			var content = button.parentElement.querySelector('.content-text').innerText;
+			navigator.clipboard.writeText(content).then(function() {
+				// 成功後不執行任何操作
+			}, function() {
+				// 失敗後不執行任何操作
+			});
+		}
+    </script>
+</head>
+    <body>
+        <button onclick="history.back()">回上一頁</button>
+        <h1>Ch02-範例與提示詞展示</h1>
+        <div class="content">
+            <div class='chapter-title'>2.1.1</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">用一般程式初學者聽的懂的話，解釋下面的程式碼，並將運算結果逐一列出
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+result = factorial(5)
+print(result)</p>
+				</div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>				
+            <div class='chapter-title'>2.1.2</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">找出這個函數的時間複雜度，並用一般人能理解的話說明。
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+result = factorial(5)</p>
+				</div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.1.3</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">我有一個學生資料表student , 記載學生基本資料，裡面有sid學號、sno身份證字號、name姓名、age年紀、addr地址，還有一個學生成績資料scores，裡面有sid學號，subject科目、score分數欄位。幫我產生一個sql語法，取得學生成績表裡面國文不及格也就是分數小於60的學生。</p>
+					
+				</div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.1.4</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">產生99乘法表的javacript寫法</p>
+					
+				</div>
+				
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">改成python語法</p>
+					
+				</div>				
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.1.5</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">找出下面程式碼的錯誤，並進行修正
+def generate_multiplication_table():
+    table = ''
+    
+    for i in range(1, 10):
+        for j in range(1, 10):
+            table += f'{i} x {j} = {i * j}'  # 這裡缺少了 \t 用來分隔每個乘法結果
+        # 缺少了換行符號，應該在每行結束後加上 table += '\n'
+    
+    return table
+
+# 輸出乘法表
+print(generate_multiplication_table())</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.1.6</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">你現在是javascript的專家，我將會請教您這方面的問題？跳出警示要怎麼寫</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.1.7</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">為程式碼寫上註解
+from linebot import LineBotApi
+from linebot.models import TextSendMessage
+channel_access_token = 'YOUR_CHANNEL_ACCESS_TOKEN'
+line_bot_api = LineBotApi(channel_access_token)
+message = TextSendMessage(text='Hello, LINE 群組!')
+group_id = 'GROUP_ID'
+line_bot_api.push_message(group_id, messages=message)</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.1.8</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">將文章轉換為順暢的句字：每每困難，我們都得到無價的經驗，而這經驗能成為我們未來成功的基石。請分享面臨挑選或失敗的經驗。它如何影響你你得到怎樣</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.2.1</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">將下面文章用一張表格進行總結，這裡接著將上面網頁的內容整個貼上。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.2.2</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">列出最近5年的頂級科幻電影10部和發行年份，以表格呈現，欄位有發行年份、英文標題、中文標題與主要演員，以發行年份排序，最新的放最上面。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.2.3</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">對這些推文中的情緒進行分類：1.我受不了作業2.這很糟糕。我很無聊3.我等不及萬聖節了！！！4.我的貓很可愛5.我討厭巧克力</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.2.4</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">從下面文章中提取關鍵詞，黑底黑陶器是一種源於20世紀至21世紀的陶藝傳統，由新墨西哥州北部的普韋布洛美洲原住民陶藝家所發展。幾個世紀以來，普韋布洛的藝術家們一直在製作傳統的黑色還原燒陶器。在上個世紀，這種陶器的表面通常經過光滑處理，並透過選擇性拋光或應用耐火漿料來展現設計。此外，另一種風格則涉及雕刻或切割設計，並對凸起的部分進行選擇性拋光，形成獨特的藝術效果。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.2.5</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">將下面文章有關產品、單價與總金額的部份，整理成表格。
+日期：2023年1月15日
+客戶：ABC 公司 - 張經理
+業務拜訪員：小王
+訪談開始：
+小王：早安，張經理！我們很高興再次拜訪您的公司。您最近對我們的產品有什麼需求嗎？
+張經理：早安，小王。實際上，我們最近需要一批辦公室用的文具和耗材，特別是一些筆記本和墨水筆。
+小王：好的，我們有各種不同類型的筆記本和墨水筆可供選擇。筆記本的單價範圍從30元到80元不等，而墨水筆的單價從5元到20元不等。您需要多少數量？
+訪談繼續：
+張經理：我們需要20本筆記本和30支墨水筆。
+小王：明白了。這是您的訂單明細：
+20本筆記本 × 單價40元/本 = 800元
+30支墨水筆 × 單價10元/支 = 300元 總金額為1,100元。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.2.6</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">將下面進行分類，把水果和疏菜分開來呈現。檸檬、西蘭花、青豆、西瓜、櫻桃、胡蘿蔔、洋蔥、草莓、葡萄、蘆筍、蘋果、花椰菜、青椒、香蕉、橙子、南瓜、芒果、番茄、藍莓、黃瓜</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.3.1</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">讓國中以下的學生能容易理解，後面請貼上文章內容，也可以是新聞的內容。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.3.2</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">替我撰寫有關「中東局勢變化對全球經濟影響」的論文大綱
+</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.3.3</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">提供給我哈利波特的學習筆記</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.3.4</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">將下面會紀錄做成摘要，後面接著內容貼上您的會議紀錄或需要總結的內容。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.3.5</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">將下面的句子進行修正，並告訴我錯的在哪裡。She don't likes ice cream。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.3.6</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">為我面試一位前端工程師職缺創建一個包含5個問題的列表</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.4</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">撰寫一封董事長張大寶於歲未年終給公司同仁具有勵志的電子郵件，期許大家努力，讓公司更好，並且要引用名人的佳句並且將名人姓名寫出來，字數不超過200個字。同時轉成英文、法文、西班牙文和日文，不同語言中間用分隔線隔開。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.5.1</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">為以下產品編寫創意廣告，在Youtube上針對父母投放。產品：語音助理是一個輔助工具，可以幫助小孩語文學習方面提到很大的提升。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.5.2</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">依照下面產品內容，產生5個能熱賣的產品名稱。產品描述：一雙適合任何腳型的鞋子。種子詞：適應性強，適合，全方位適應。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.5.3</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">黃昏時分藍天般顏色的 CSS 代碼，鑽石般閃耀的顏色的色碼，將夕陽西下轉換成色碼</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.5.4</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">將下面句子用餐廳評論者的角度撰寫，店名：天天開心牛排店，價格還行、肉品新鮮、服務品質好，就是有一點吵與空間較小。平時還可以，假日人太多。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.5.5</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">給我2023年，美國最熱銷的電影的中文名稱，將電影片名轉成表情符號。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.5.6</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">微型恐佈故事創作者，主題：夜晚，二句話的恐怖故事。</p>
+					
+				</div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+            <div class='chapter-title'>2.6.1</div>
+				<div class="prompt-block">
+					<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+					<p class="content-text">告訴我如何從零基礎學好AI機器學習程式開發，請幫我規劃學習計劃。</p>
+					
+				</div>					
+
+    </body>
+    </html>
+    

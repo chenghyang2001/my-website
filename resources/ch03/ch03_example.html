@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Ch03-範例與提示詞展示</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			background-color: #f4f4f4;
+			margin: 20px;
+		}
+		h1 {
+			color: #333;
+			text-align: center;
+		}
+		p {
+			margin: 10px 0;
+			color: #555;
+			padding: 10px;
+			background: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.prompt-block, .table-block {
+			background: #eee;
+			padding: 15px;
+			border-radius: 5px;
+			border-left: 5px solid #0073e6;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			position: relative;
+			margin: 20px 0;
+			display: flex;
+			align-items: flex-start; /* 保持內容與按鈕的垂直對齊 */
+		}
+		.chapter-title {
+			font-size: 1.5em;
+			font-weight: bold;
+			color: #003366;
+			margin-top: 20px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			font-size: 1em;
+			background-color: #0073e6;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #005bb5;
+		}
+		.copy-button {
+			margin-right: 15px; /* 與文字間距 */
+			padding: 5px 10px;
+			font-size: 0.9em;
+			background-color: #28a745;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.copy-button:hover {
+			background-color: #218838;
+		}
+		.content-text {
+			flex: 1;
+			margin: 0;
+		}
+		/* 分隔線的樣式 */
+		.divider {
+			border-top: 1px solid #ccc;
+			margin: 20px 0;
+		}		
+    </style>
+    <script>
+		function copyToClipboard(button) {
+			var content = button.parentElement.querySelector('.content-text').innerText;
+			navigator.clipboard.writeText(content).then(function() {
+				// 成功後不執行任何操作
+			}, function() {
+				// 失敗後不執行任何操作
+			});
+		}
+    </script>
+</head>
+<body>
+    <button onclick="history.back()">回上一頁</button>
+    <h1>Ch03-範例與提示詞展示</h1>
+    <div class="content">
+        <div class="chapter-title">3.1</div>
+		範例一、修正句子結構：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">原始句子：「他在參加客戶會議的時候，不小心說錯了話，導致了誤解。」幫我修正句子結構，列出原始句子，修正後句子與修正項目及說明修正理由。</p>
+			</div>
+
+		範例二、更正拼寫錯誤：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">原始句子：「我很喜歡阅讀原文書籍，特別是電腦與科技方面的。」幫我更正拼寫錯誤，列出原始句子，修正後句子與修正項目說明。</p>
+			</div>
+			
+		範例三、改進句子流暢度：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">他是個很好的運動員，他受過很多獎勵。」幫我改進句子流暢度，列出原始句子，修正後句子與與修正項目說明。</p>
+			</div>		
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+		
+        <div class="chapter-title">3.2</div>
+		範例一、分類文章中的語言：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請幫我提取下面文字，將中文文字提取，同時把英文去除並呈現，接著再把英文文字提取並寫在下面一段。
+1.諸神的起源（The Origin of Gods ）
+2.奧林帕斯山眾神（The Gods of Olympus）
+3.宙斯之怒（The Anger of Zeus）
+4.大力士海克力斯（Hercules）
+5.歐羅巴和卡德莫斯（Europa and Cadmus）
+6.特洛伊戰爭（The Trojan War）
+7.愛神和賽姬（Eros and Psyche）
+8.阿波羅和達芙妮（Apollo and Daphne）
+9.宙斯的眾情人（Zeus's Lovers）
+10.阿波羅戰車（Apollo's Chariot ）
+11.點石成金（The Midas Touch）
+12.美少年納西瑟斯（Narcissus and Echo）</p>
+			</div>
+
+		範例二、挑戰複雜一點的文章：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">這是十大經典電影勵志中英文台詞語錄請幫我提取下面文字，將所有中文文字提取，同時把英文去除並呈現，輸出保持原始內容，接著再把所有英文文字提取並寫在下面一段，輸出保持原始內容。 1、堅持做對的事，永遠不會錯。-電影【高年級實習生】 You are never wrong to do the right thing. 2、音樂家不會退休，直到心中沒有音樂才會停止。-電影【高年級實習生】 Musicians don’t retire; they stop when there’s no more music in them. 3、經驗永遠不會過時。-電影【高年級實習生】 Experience never goes out of fashion. 4、人們可以說我不會唱歌，但沒有人能說我沒唱過。-電影【走音天后】 People may say I can’t sing but no one can ever say I didn’t sing.</p>
+			</div>
+			
+		範例三、資料斷詞處理：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請將下面中文與英文內容逐項檢視並修改成有標點符號和斷句的文章，不需要做語言轉換。人工智慧是現代科學和技術中的一個重要領域它探討如何使計算機系統能夠執行需要人類智慧的任務這包括語音識別視覺感知自然語言處理和決策制定等領域人工智慧的目標是創建具有類似於人類智能的計算機系統這樣的系統可以理解學習應對不同情境並解決各種問題
+The stock market performed poorly in today's trading with major indices experiencing declines that left investors concerned The Dow Jones Industrial Average fell by 100 points closing at 35000 points The Nasdaq Composite Index also dropped by 2% ending the day at 14000 points Analysts believe that the recent market volatility may be due to trade uncertainties and inflationary pressures However, some investors remain optimistic seeing this as an opportunity for long-term investment
+</p>
+			</div>		
+			
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.3</div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你是台積電的AI工程師面試官，請分享 5 個面試AI工程師時，最容易遇到的專業性問題。</p>
+        </div>
+		
+補充說明：除了產生面試題外，我們還可以請ChatGPT產生關於這些問題的模擬回答提詞如下		
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">並告訴我這些問題的合理回答內容</p>
+        </div>		
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>		
+        <div class="chapter-title">3.4</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你現在是人力資源專家，請幫我撰寫有關AI演算法開發的職缺內容，幫助我吸引優秀的人才</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你現在是人力資源專家，請幫我撰寫有關保健食品相關電子商務行銷企劃的職缺內容，幫助我吸引優秀的人才</p>
+        </div>		
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.5</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我總結以下學術文章的主要研究成果和結論。以下是文章內容：[在這裡貼上文章片段]。請重點提及研究目的、主要發現和研究結論。</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我提煉以下商業報告的關鍵數據和趨勢分析。以下是報告內容：[在這裡貼上報告片段]。請重點包括銷售數據、主要趨勢和業務建議。</p>
+        </div>
+		範例三：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我從以下新聞報導中提取主要事件和重要細節。以下是新聞內容：[在這裡貼上新聞報導片段]。請包括事件的基本情況、影響及任何後續措施。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.6</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請給我一個關於量子計算的基礎介紹，包括它的基本概念和主要應用領域。</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">我想了解機器學習中的過擬合問題。請詳細解釋什麼是過擬合，它的原因，以及如何防止過擬合。</p>
+        </div>
+		範例三：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請給我一些有關Python編程的練習題，並提供答案和解釋，幫助我加強對Python基礎知識的理解。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.7</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我分析未來3年智能手機市場的主要趨勢，包括市場增長、主要競爭者和消費者偏好。</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請比較蘋果和三星在智能手機市場上的主要優勢和劣勢，包括產品特性、定價策略和市場份額。</p>
+        </div>
+		範例三：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請描述未來3年，新能源汽車市場的主要趨勢和未來的增長機會。</p>
+        </div>
+		<!-- 插入分隔線 -->
+        <div class="chapter-title">3.8</div>		
+		範例資料：先複製貼到ChatGPT執行，再進行後面的三個範例操作
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">以下是過去六個月的家庭支出數據，請先記著，先不用回覆我。
+•	食品：3,000、3,200、2900、3100、2800、3300
+•	交通：1500、1600、1400、1550、1650、1700
+•	娛樂：1000、1200、1100、1300、1400、1250
+•	租金：12000、12000、12000、12000、12000、12000
+•	其他：500、600、550、650、700、600</p>
+        </div>		
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我計算每一類支出的平均數、中位數、變異數和標準差，並找出支出最多的類別。</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我計算每一類的變異數和標準差，以了解各類支出的變異程度。</p>
+        </div>
+		範例三：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我計算每一類支出的平均數，並給出建議如何根據這些數據進行預算分配。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.9</div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">退貨政策，退貨期限，購買的商品必須在收到貨物後的 [30 天] 內申請退貨。我們會接受在此期限內的退貨請求。退貨條件，商品必須保持原始狀態，包括原包裝、未使用、未損壞、原標籤和配件。請確保商品在退回之前已經清洗乾淨，並且沒有任何損壞或使用痕跡。退貨流程，請聯繫我們的客服部門，提供訂單號和退貨原因，我們將提供退貨授權碼（RMA）。使用我們提供的退貨授權碼將商品寄回到我們指定的退貨地址。退貨地址和寄回流程會在客服回覆中提供。 退貨郵寄費用由客戶承擔，除非商品有瑕疵或錯誤發貨。 退款處理 一旦我們收到退回的商品並確認其符合退貨條件，我們將在 [7-10 個工作日] 內處理退款。 退款將通過原支付方式退還至您的賬戶。請注意，退款時間可能會因支付渠道而異。 上面是公司的退貨政策，下面是客戶提問：您好，我最近在您們的網站上購買了一件外套，但收到後發現尺寸不合適。我想退貨，但是我知道訂單已經超過了30天的退貨期限。請問我可以怎麼辦？我該如何進行退貨？請依照公司的退貨政策，生成回覆內容。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.10</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你現在是專業秘書，請幫我寫一封商務信件給台灣太陽能公司黃秘書，同時翻譯並產生日文與英文版本，我們公司是第一儲能有限公司，我是業務張明達經理，信件內容是我們公司業務處包括我總共三位，希望於10月10日，上午10點前往拜訪台灣太陽能公司王總經理，洽談合作事宜，預計2小時，請黃秘書協助安排並確認上述時間是否可以。</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">會議時間由原來的10/10更改為10月5日，時間不變，請幫我產生會議更正通知商務信件，同時產生日文與英文版本。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.11</div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">下面是我收集的客訴相關內容，請將下面信件內容中的人名與聯絡資訊、問題，提取出來，聯絡資訊欄位格式統一成”XXXX-XXX-XXX”，並以表格方式呈現，需要有項次。
+客訴案件內容：
+我是貴公司的忠實客戶，最近購買了貴公司的產品。然而，我對於產品的質量和服務非常不滿。我購買的產品是一個名為「AI智能音箱套件」的產品，編號為A12345。陳先生（0982-743-621）和我的朋友劉小姐（0938765-432）都能證明這一點。在使用不到一個月的時間內，我發現音箱的操作出現了嚴重的問題。音箱在導航、播放音樂和設置提醒等功能方面表現非常不穩定，無法正常工作。我多次與貴公司的客戶服務部門聯繫，但始終未能得到令人滿意的解決方案。我要求更換一個新的音箱，但客戶服務部門拒絕了我的要求。蔡先生（0973-334-987）也遇到了類似的問題。此外，我還要求退貨，但客戶服務部門告知我，產品售出後不提供退貨服務。客戶服務部門沒有向我提供任何關於維修或退款的具體信息。我多次致電客戶服務部門，楊先生（0933445666）和謝小姐（0944555777）也和我一樣，無法聯繫到相關人員。
+</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.12</div>
+		通用提詞模版：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我總結以下文章的主要內容和觀點：{這裡貼上您的文章內容}</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我總結以下會議紀錄的主要議題和決議：{這裡貼上您的會議紀錄內容}</p>
+        </div>		
+		進階提詞模版：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請根據以下文章內容生成一個重點摘要，涵蓋主要研究發現和結論：{這裡貼上您的文章內容}</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請將以下文章分段總結，每段總結不超過兩句話：{這裡貼上您的文章內容}</p>
+        </div>
+		        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我總結以下文章的主要結論，並說明該結論對未來研究或應用的影響：{這裡貼上您的文章內容}</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我總結以下會議紀錄的主要議題、討論內容和決議，並生成一份行動項目清單：{這裡貼上您的會議紀錄內容}</p>
+        </div>		
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.13</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我 用繁體中文寫上程式註解，並且在第一行寫出程式的主題是什麼，請保留原始程式格式，包括縮排。
+for i in range(1, 10): 
+	for j in range(1, 10):
+		 print("%d * %d = %d" % (i, j, i*j)) 
+	print()</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">下面是一個SQL語句，請幫我寫上程式註解，並且在第一行寫出程式的主題是什麼，請保留原始程式格式，包括縮排。select s_id,product_name,qty,price from orders where product_name ='A0001' order by s_id desc
+</p>
+        </div>
+		範例三：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請解釋[it’s raining cats and dogs]，並給我[3]個英文例句與中文解說，記得中文翻譯不要直接翻</p>
+        </div>
+		範例四：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請用讓小學生聽的懂的話來解釋「GPU晶片」</p>
+        </div>		
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.14</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你是python語言專家。 請幫我寫從youtube下載影片的程式碼，下載網址是https://youtu.be/AyEa1Vln3uA，請放心，這個下載是我自已的影片。</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你是作詞作曲專家，我想要你幫我創作歌詞與作曲。曲風是舒情，內容是描述回憶高中生活的點點滴滴，與朋友一起吃喝玩樂、一起搞判逆、一起打籃球的美好回憶與濃厚的友情。
+</p>
+        </div>
+		範例三：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">幫我撰寫一份專利說明書，描述一種新型的太陽能光電板材料，該材料可以在極少的日光下，也能有很好的轉換效率。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.15</div>
+		<a href="./sample/ch031501_sample_測試Excel多sheet批次轉資料表.xlsx" download>下載ch031501_sample_測試Excel多sheet批次轉資料表.xlsx</a>		
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">寫一個程式包括創建資料庫資料表，將測試Excel多sheet批次轉資料表.xlsx裡面的所有sheet寫到資料庫的資料表。資料庫的連結資訊如下：mysql資料庫主機：localhost，登入帳號：demo，登入密碼：demo1234，連接port：3306，使用的資料庫是demotest，先創建資料庫的資料表，有關於資料表中的資料的型態，請先解析資料的內容後用最適合的型態建立，並指定第一個欄位當做主鍵值索引。每一次資料的寫入，先清空資料表在進行。三、請加上創建資料表的部份。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.16</div>
+		Step01：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你現在是人型機器人專家，我們想要開發新人型機器人應用，請你回答我問題。</p>
+        </div>
+		Step02：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請列出，未來5項新人型機器人發展的趨勢與技術，用表格呈現。</p>
+        </div>
+		Step03：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請列出可能面臨的挑戰。</p>
+        </div>
+		Step04：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">市場有沒有競爭者，每一個項目列出前三大。</p>
+        </div>
+		Step05：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">如果要投入，並且達到市佔全球前三名請具體列出方案與執行方針及所需要的時程規劃、投入人力，投入成本，花費以新台幣表示。</p>
+        </div>		
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.17</div>
+		Step01：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你現在是IT主管，擁有經營管理方面的專長。我將會有公司年度計劃的提問要請教您。我想要制定公司數位優化轉型的策略，請分別列出短、中、長期的計劃內容，至少要包括可應用的具體科技技術。</p>
+        </div>
+		Step02：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">我希望公司年度計劃可以導入ChatGPT與BI二項技術用在經營管理上，請依照我的要求修正年度計劃，並用管理高層聽的懂的語言表示。修正後重新呈現短、中、長期的計劃內容。</p>
+        </div>
+		Step03：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">關於短期計劃中的「ChatGPT應用於經營管理」項目，請再列出更詳細的行動方針。</p>
+        </div>
+		Step04：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請幫我把短期計劃要推動的所有項目，規劃時程，列出預計開始日，預計完成日，所需要時間，重要里程碑並以markdown表格方式呈現。</p>
+        </div>
+		Step05：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">針對上面的短、中、長期的計劃內容，納入具體可能應用的最新科技技術，並且請提出可以在優化的地方，並以markdown表格方式呈現優化前後的差異。</p>
+        </div>	
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.18</div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">你現在是線上課程的規劃專家，尤其是公司經營管理方面。我想要規劃企業內部訓練的課程，包括訓練的名稱與所有的教案、教材。我希望採取問答的方式，從主題的訂定開始，一步一步的帶著我把課程所需要的所有東西完整的產出，要詳細到可以完成2個小時的內容，而且要能夠吸引人與沒有管理經驗的人也能理解與吸收的內容。下面所有的回答都用繁體中文回覆。</p>
+        </div>
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.19</div>
+		範例一：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">幫我生成一個每日行程表，包含工作、休息和運動時間，假設我的工作時間是上午9點到下午6點，並且我希望每天運動1小時。</p>
+        </div>
+		範例二：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">幫我制定一個月的健身目標，包括每週的運動計劃和進度追蹤。</p>
+        </div>
+		範例三：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">今天我有五個任務要完成：準備會議報告、回覆客戶郵件、完成產品設計、參加團隊會議和整理文件。請幫我按照重要性和緊急性排列優先級。</p>
+        </div>
+		範例四：
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">以下是我今天的時間使用情況：工作8小時、休息2小時、運動1小時、娛樂3小時、家務1小時、睡覺9小時。請幫我分析如何更有效地利用時間。</p>
+        </div>		
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.20</div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">請詳細列給我，世界上可以用來解決問題的所有模型，先不要解釋，我只要清單，可以給我50個最多人使用的嗎？</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">將這些模型分成八類</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">除了上面提到的八個模型分類，是不是還有更多更好用的分類與模型呢？</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">在財務方面的分類與模型有哪些？</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">在生產製造方面的分類與模型有哪些？</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">在研發發展造方面的分類與模型有哪些？</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">在人力資源方面的分類與模型有哪些？</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">在銷售方面的分類與模型有哪些？</p>
+        </div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">有關比率分析模型：包括財務比率（如流動比率、負債比率、利潤率等）的計算和分析，用於評估企業的財務健康狀況。我要開始進行這方面的工作，請引導我。</p>
+        </div>		
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">3.21</div>
+        <div class="prompt-block">
+            <button class="copy-button" onclick="copyToClipboard(this)">複製</button>		
+            <p class="content-text">在「分析公司歷年的年報」時，可以怎樣對ChatGPT進行專業有效的提問</p>
+        </div>		
+
+    </div>
+</body>
+</html>

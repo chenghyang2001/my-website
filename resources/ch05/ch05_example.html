@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Ch05-範例與提示詞展示</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			background-color: #f4f4f4;
+			margin: 20px;
+		}
+		h1 {
+			color: #333;
+			text-align: center;
+		}
+		p {
+			margin: 10px 0;
+			color: #555;
+			padding: 10px;
+			background: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.prompt-block, .table-block {
+			background: #eee;
+			padding: 15px;
+			border-radius: 5px;
+			border-left: 5px solid #0073e6;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			position: relative;
+			margin: 20px 0;
+			display: flex;
+			align-items: flex-start; /* 保持內容與按鈕的垂直對齊 */
+		}
+		.chapter-title {
+			font-size: 1.5em;
+			font-weight: bold;
+			color: #003366;
+			margin-top: 20px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			font-size: 1em;
+			background-color: #0073e6;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #005bb5;
+		}
+		.copy-button {
+			margin-right: 15px; /* 與文字間距 */
+			padding: 5px 10px;
+			font-size: 0.9em;
+			background-color: #28a745;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.copy-button:hover {
+			background-color: #218838;
+		}
+		.content-text {
+			flex: 1;
+			margin: 0;
+		}
+		/* 分隔線的樣式 */
+		.divider {
+			border-top: 1px solid #ccc;
+			margin: 20px 0;
+		}			
+    </style>
+    <script>
+		function copyToClipboard(button) {
+			var content = button.parentElement.querySelector('.content-text').innerText;
+			navigator.clipboard.writeText(content).then(function() {
+				// 成功後不執行任何操作
+			}, function() {
+				// 失敗後不執行任何操作
+			});
+		}
+    </script>
+</head>
+<body>
+    <button onclick="history.back()">回上一頁</button>
+    <h1>Ch05-範例與提示詞展示</h1>
+    <div class="content">
+        <div class="chapter-title">5.1</div>
+		範例一：
+				<a href="./sample/ch050101.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">這道菜是什麼？告訴我怎麼製作。</p>
+			</div>
+		範例二：
+				<a href="./sample/ch050102.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">我要做晚餐，請利用這些食材，給我建議，包括製作過程。</p>
+			</div>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請用這些食材，我想要做蔬食料理。</p>
+			</div>				
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+		
+        <div class="chapter-title">5.2</div>
+				<a href="./sample/ch050201.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將UI設計轉換為前端程式碼</p>
+			</div>
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.3</div>
+		範例一：
+				<a href="./sample/ch050301.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">從圖像中提取文本</p>
+			</div>
+		範例二：
+				<a href="./sample/ch050302.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">從圖像中提取文本</p>
+			</div>		
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.4</div>
+				<a href="./sample/ch050401.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">解釋這張圖</p>
+			</div>	
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.5</div>
+				<a href="./sample/ch050501.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">解釋這張圖</p>
+			</div>	
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.6</div>
+		範例一：
+				<a href="./sample/ch050601.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">圖中紅色框框標示的線，如果剪斷會發生什麼事？</p>
+			</div>
+		範例二：
+				<a href="./sample/ch050602.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">說明這張圖，如果圖裡面的物體失去動力會發生什麼事？</p>
+			</div>	
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.7</div>
+				<a href="./sample/ch050701.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">你現在是尚時專家，以專業的角度，針對這圖片的穿搭進行評鑑。</p>
+			</div>	
+			
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">生成一張年輕時尚女性的圖片，她大約二十多歲，擁有長而微捲的棕色頭髮和白皙的膚色。她穿著適合城市休閒日的韓式秋季時尚服裝，包含一件米色風衣、奶油色針織毛衣、深藍色緊身牛仔褲和短靴。她還攜帶一個棕色皮革手提包，並佩戴簡單的金色飾品。背景應該是一條現代城市街道，上面散落著落葉，在柔和溫暖的光線下展現。</p>
+			</div>	
+
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請轉換成法式風格。</p>
+			</div>				
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.8</div>
+				<a href="./sample/ch0508.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">解析這張圖片，並且寫一首符合這張圖片的詩詞。</p>
+			</div>	
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.9</div>
+				<a href="./sample/ch0509.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">解析圖片，告訴我關於這圖片所在地理位置的歷史。</p>
+			</div>	
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">5.10</div>
+				<a href="./sample/ch0510.png" download>下載範例圖檔</a>		
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請告訴我圖片中的動物是什麼，與他的歷史。</p>
+			</div>	
+
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>		
+
+
+    </div>
+</body>
+</html>

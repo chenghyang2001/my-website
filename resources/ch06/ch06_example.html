@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Ch06-範例與提示詞展示</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			background-color: #f4f4f4;
+			margin: 20px;
+		}
+		h1 {
+			color: #333;
+			text-align: center;
+		}
+		p {
+			margin: 10px 0;
+			color: #555;
+			padding: 10px;
+			background: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.prompt-block, .table-block {
+			background: #eee;
+			padding: 15px;
+			border-radius: 5px;
+			border-left: 5px solid #0073e6;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			position: relative;
+			margin: 20px 0;
+			display: flex;
+			align-items: flex-start; /* 保持內容與按鈕的垂直對齊 */
+		}
+		.chapter-title {
+			font-size: 1.5em;
+			font-weight: bold;
+			color: #003366;
+			margin-top: 20px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			font-size: 1em;
+			background-color: #0073e6;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #005bb5;
+		}
+		.copy-button {
+			margin-right: 15px; /* 與文字間距 */
+			padding: 5px 10px;
+			font-size: 0.9em;
+			background-color: #28a745;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.copy-button:hover {
+			background-color: #218838;
+		}
+		.content-text {
+			flex: 1;
+			margin: 0;
+		}
+		/* 分隔線的樣式 */
+		.divider {
+			border-top: 1px solid #ccc;
+			margin: 20px 0;
+		}			
+    </style>
+    <script>
+		function copyToClipboard(button) {
+			var content = button.parentElement.querySelector('.content-text').innerText;
+			navigator.clipboard.writeText(content).then(function() {
+				// 成功後不執行任何操作
+			}, function() {
+				// 失敗後不執行任何操作
+			});
+		}
+    </script>
+</head>
+<body>
+    <button onclick="history.back()">回上一頁</button>
+    <h1>Ch06-範例與提示詞展示</h1>
+    <div class="content">
+        <div class="chapter-title">6.3.1</div>
+		Step01：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">生成20個隨機數結果，用表格方式呈現。</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">生成2024 年11 月到12 月的日期序列，用表格方式呈現。</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將上面產生11 到12 月的日期序列，新增溫度欄位，內容是隨產生的數値。</p>
+			</div>		
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+		
+        <div class="chapter-title">6.3.2</div>
+		Step01：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將上面產生11到12月的日期序列、原先的亂數值與溫度欄位進行整併欄位，其中亂數上下限的值，將重新定義介於0至100的整數。</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">重新將溫度欄位進行調整，值要介於20到44之間</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">新增2025年1月1到1月7號的七筆資料。</p>
+			</div>
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">繼續新增壓力欄位，位置在溫度欄位之前，內容值隨機產生。</p>
+			</div>
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將上面表格資料依照日期，進行由大到小進行排序。</p>
+			</div>			
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">6.3.3</div>
+		Step01：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">將上面表格資料進行分析。</p>
+			</div>
+		Step02：Google 的思源字型，下載連結https://fonts.google.com/selection
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請畫出趨勢圖。</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">使用這個字型修正圖表的中文字亂碼問題。</p>
+			</div>	
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請針對溫度與壓力進行基本統計分析。</p>
+			</div>
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">可以有更進階的分析嗎？</p>
+			</div>
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">我對第一項有興趣。</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請利用機器學習幫我預測未來三天的壓力與溫度。</p>
+			</div>				
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">6.4</div>
+		Step01：資料下載連結
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://plvr.land.moi.gov.tw/DownloadOpenData#</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">輸入提詞請記著這個上傳的中文字型，後面所有的圖表的中文字，都用這個中文字型呈現。</p>
+			</div>
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">每坪單價的趨勢</p>
+			</div>	
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">建物型態的比例</p>
+			</div>
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">建物型態的每月趨勢</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">從坪數方面觀察每坪單價均值</p>
+			</div>	
+		Step08：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">什麼和每坪單價有關？</p>
+			</div>
+		Step09：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請結合房地產之蛛網理論來進行分析</p>
+			</div>
+		Step10：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">1.迴歸分析：請使用線性迴歸或多變量迴歸分析，探討房價與不同特徵之間的關係，幫助理解每個特徵對房價的影響程度，並進行房價預測。
+2.決策樹和隨機森林：請使用決策樹和隨機森林等機器學習模型，進行房地產市場的分類或回歸分析。
+3.支持向量機（SVM）：請使用SVM模型進行房地產價格預測或市場趨勢分析。
+4.聚類分析：請使用聚類分析識別相似的房地產市場區域，進行市場區段劃分或定位，幫助理解不同區域的市場特徵和行為模式。
+5.時間序列分析：請對房地產市場的價格和交易量數據進行時間序列分析，預測未來的市場趨勢和波動。</p>
+			</div>				
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">6.5</div>
+		Step01：資料下載連結
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">請依照以下步驟分析提供的數據集，並生成一份銷售報告：
+1. 數據集內容概覽：簡要說明數據集的主要內容與構成。
+2. 趨勢分析：分析數據集中顯示的趨勢，並自動生成可視化圖表。
+3. 銷售商品分析：列出這段期間內銷售最好的前10名商品，包括商品名稱、銷售金額及平均毛利率，並將其可視化。4. 銷售城市分析：列出這段期間銷售金額最高的前5名城市，包括銷售金額及平均毛利率，並將其可視化。
+5. 價格漲幅分析：找出這段時間內價格漲幅最快的產品，並生成該產品的可視化展示。
+6. 客戶分析：使用RFM模型對客戶進行分析，並將客戶分為不同類別。
+7. 關鍵點提取：列出從數據集中提取出的10個關鍵點。
+8. 洞察與見解：根據數據集提供的情報，列出相關洞察並用列表形式呈現。將洞察重點摘要成簡短的見解。
+9. 銷售報告生成：將上述所有分析與可視化結果整理成一份完整的銷售報告，並存成docx檔以供下載。</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">*數據集的主要內容是什麼？
+*這個數據集顯示的趨勢是什麼？
+*請分析這個數據集，並且自動產生可視化圖。
+*給我這段期間，前10名銷售最好的商品，包括商品名稱、銷售金額、平均毛利率，可以將它可視化嗎？
+*給我這段期間，前5名銷售金額最高的城市，包括銷售金額與平均毛利率，可以將它可視化嗎？
+*在這段時間，價格漲幅最快的是哪項產品？
+*可以分析價格漲幅最快的產品並進行視覺化展示。
+*可以用這個數據集，利用RFM模型進行客戶分析嗎？
+*可以使用RFM模型可用於客戶分析，並進一步將客戶分為不同類別。
+*列出10個關鍵點，可以根據數據集提取出的重要信息列出關鍵點。
+*從這個數據，你洞察到什麼，用列表呈現。
+*可以根據數據集洞察到的信息列出相關洞察。
+*從這個數據，你有什麼見解，將它摘要重點。
+*可以將從數據集得出的見解總結成摘要重點。
+*最後將上面的過程整理成銷售報告，包括所有的可視化圖表都要在裡面，存成docx檔讓我下載。
+</p>
+			</div>	
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+
+        <div class="chapter-title">6.6</div>
+		Step01：資料下載連結
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">https://investor.tsmc.com/chinese/financial-reports</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">附件的四個檔案，是我這一次要分析的公司-台積電，從2020到2023年的公司年報資料，請您用財務顧問專家的角度來．逐項檢視我們四年的財報資料。
+我希望你能提供我具體的建議，有關於如何改進營運與提升公司獲利。利用常用的分析模型進行解讀與詳細的說明。</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">除了上面提到的，你還有洞察到什麼更有價值的資訊嗎？</p>
+			</div>			
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">公司的利潤率和毛利率如何？是否有穩定的增長或下降趨勢？</p>
+			</div>
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">公司的主要成本來源是什麼？這些成本在近年有無變化？</p>
+			</div>
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">公司產品或服務的市場份額如何？競爭情況如何？</p>
+			</div>						
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>
+        <div class="chapter-title">6.7</div>
+		檔案下載：<a href="./sample/ch0607.xlsx" download>下載設備保養資料表.xlsx</a><br>
+		Step01：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">我想要進行設備預防保養的主題式分析，上傳的檔案是設備保養資料集，每一筆資料都是保養資料，其中Factory 欄位是設備所在生產廠，EquipmentID 欄位是設備的編號，Equipment_Name 欄位是設備的名稱，Equipment_Type 欄位是設備的類別型式，Equipment_importance_level 欄位是設備的重要度，Maintain_Date 欄位是設備保養日期，Maintain_Section 欄位是設備的保養部門，Maintain_Typet 欄位是設備維護類型。Error_Mode 欄位是異常模式Minimum maintenance interval 欄位是設備的最小保養週期若相同生產廠之設備編號保養次數越多，代表設備越容易故障。我接下來會提出分析的需求。</p>
+			</div>
+		Step02：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">利用檔案內的資料進行數據探索</p>
+			</div>
+		Step03：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">利用檔案內的資料進行數據特徵工程</p>
+			</div>
+		Step04：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">利用檔案內的資料進行針對最小保養週期欄位，經過最適化分析，給出優化後的建議值，用新欄位表示，並匯出更新後的資料集讓我下載。</p>
+			</div>
+		Step05：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">列出這份文件具有價值的洞察報告。</p>
+			</div>
+		Step06：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">各生產廠相同設備類別型式與設備的最小保養週期相關性為何？</p>
+			</div>
+		Step07：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">是否保養周期較短的設備其故障保養的次數較少？</p>
+			</div>
+		Step08：
+			<div class="prompt-block">
+				<button class="copy-button" onclick="copyToClipboard(this)">複製</button>
+				<p class="content-text">最後請將所有的分析整理成一份正式的報告，報告中要有圖，也要有洞察結果。並產生word檔，讓我下載。</p>
+			</div>
+		
+
+		<!-- 插入分隔線 -->
+		<div class="divider"></div>		
+
+
+    </div>
+</body>
+</html>
